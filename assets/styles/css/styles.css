@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css?family=Courgette");
+
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    font-family: Helvetica, Arial, sans-serif;
+}
+#entete
+{
+    text-align: center;
+}
+header{
+    width:100%;
+    height: 200px;
+    position: fixed;
+    text-align: center;
+   /* background-image: url("assets/images/livres.jpg");*/
+    border-radius: 30px;
+
+}
+
+header h1{
+    font-family: 'Courgette', cursive;
+    color: #800080;
+    padding-top: 20px;
+    font-size: 60px;
+}
+nav{
+    width: 100%;
+    height: 52px;
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+nav li.menu1{
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+}
+nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size:20px;
+    font-weight: bold;
+    color:#800080;
+}
+nav a:hover{
+    border-top: 2px solid #800080;
+    border-bottom: 2px solid #800080;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color:#6c615f;
+
+}
