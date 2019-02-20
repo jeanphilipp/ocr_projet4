@@ -1,19 +1,24 @@
 <?php
 
-
 include_once '_config/config.php';
 include_once '_config/db.php';
+
 include_once '_functions/functions.php';
-include_once '_classes/Chapters.php';
-include_once '_classes/Comments.php';
-include_once '_classes/Users.php';
 
+include_once 'models/Chapters.php';
+include_once 'models/Comments.php';
+include_once 'models/Users.php';
 
-$var = new Users(1);
-debug($var);
-exit;
+include_once 'models/UsersManager.php';
 
-// var_dump($db);
+//include_once 'views/member_view.php';
+
+/*$usersManager = new UsersManager();
+$var = $usersManager->get(1);
+
+var_dump($var);*/
+
+//var_dump($db);
 
 // Definition de la page courante
 if (isset($_GET['page']) AND !empty($_GET['page'])) {
@@ -27,6 +32,7 @@ $allPages = scandir('controllers/');
 
 // test verification tableau
 //var_dump($allPages);
+var_dump($page);
 
 if(in_array($page.'_controller.php', $allPages)){
     //inclusion de la page
@@ -36,6 +42,6 @@ if(in_array($page.'_controller.php', $allPages)){
 
 } else {
     // retour d'une erreur
-    echo 'Erreur 404';
+    echo 'test Erreur 404';
 
 }

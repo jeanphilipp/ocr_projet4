@@ -1,7 +1,8 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: jpg
- * Date: 11/02/19
- * Time: 15:05
- */
+
+
+<div id="foot">
+    <span>&copy;2019 -jpgwebcreation</span>
+</div>
+
+
+

@@ -6,33 +6,36 @@
 }
 body{
     font-family: Helvetica, Arial, sans-serif;
+    background-color: #E6E6FA;
 }
-#entete
-{
-    text-align: center;
-}
-header{
+#main{
     width:100%;
     height: 200px;
     position: fixed;
     text-align: center;
-   /* background-image: url("assets/images/livres.jpg");*/
+    background-image:url('http://localhost/projet4/assets/images/livres.jpg');
     border-radius: 30px;
-
+    box-shadow: 4px 4px 12px #DCDCDC;
 }
 
-header h1{
+#main h1{
     font-family: 'Courgette', cursive;
-    color: #800080;
+    color: #696969;
     padding-top: 20px;
     font-size: 60px;
+    text-shadow: 0px 0px 15px #DCDCDC;
+    transition: font-size 0.5s;
 }
 nav{
     width: 100%;
     height: 52px;
     text-align: center;
+    background-color: #f0f0f0;
     margin-top: 50px;
     border-radius: 20px;
+    box-shadow: 4px 4px 12px #DCDCDC;
+    text-shadow: 0px 0px 15px #DCDCDC;
+    transition: font-size 0.5s;;
 }
 nav li.menu1{
     position: relative;
@@ -45,13 +48,256 @@ nav a{
     font-style: italic;
     font-size:20px;
     font-weight: bold;
-    color:#800080;
+    color: #696969;
 }
 nav a:hover{
-    border-top: 2px solid #800080;
-    border-bottom: 2px solid #800080;
+    border-top: 2px solid #696969;
+    border-bottom: 2px solid #696969;
     padding-top: 2px;
     padding-bottom: 2px;
     color:#6c615f;
+    text-shadow: 0px 0px 15px #DCDCDC;
+    transition: font-size 0.5s;
+}
+
+/* Espace personnel*/
+
+#container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100vh;
+}
+
+.login {
+    width: 500px;
+    background: #f3f3f3;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    margin-top: 150px;
+    padding: 15px;
 
 }
+.login h2 {
+    font-family: Verdana, Times, serif;
+    font-size: 35px;
+    color: #333;
+    margin: 0;
+    padding:0;
+    text-align: center;
+}
+#container .acces {
+    text-align: center;
+    margin-bottom: 30px;
+}
+#container .champ {
+    width: 400px;
+    height: 30px;
+    border: 1px solid #c3c3c3;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    background: #e4e4e4;
+}
+#container .champ:hover {
+    background: #fff;
+    border: 1px solid #000;
+}
+#container .loginbottom {
+    background: #d3dfdf;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    border-radius: 5px;
+}
+#container .bt {
+    background: #000;
+    color: #fff;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+    outline:none;
+    margin-bottom: 10px;
+}
+.bt:hover {
+    background: #a00;
+    transition: 0.5s;
+}
+.msg {
+    color: red;
+}
+.login a {
+    color: #06F;
+    text-decoration: none;
+}
+.login a:hover {
+    text-decoration: underline;
+}
+/* Fin de l'espace personnel */
+
+#wrapper{
+    width: 60%;
+    margin: auto;
+    padding-top: 200px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    box-shadow: 4px 4px 12px #DCDCDC;
+}
+section{
+    height: 600px;
+    box-shadow: 4px 4px 12px #DCDCDC;
+}
+section #part1{
+    width: 50%;
+    float: left;
+}
+#phot{
+    text-align: center;
+    padding-top: 50px;
+}
+#phot .book{
+    width: 410px;
+    height: 516px;
+    webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    box-shadow: 4px 4px 12px #DCDCDC;
+}
+.book:hover{
+    margin-left: 20px;
+}
+section #part2{
+    width: 40%;
+    float: left;
+    font-family: 'Courgette', cursive;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 80px;
+    padding-left: 10px;
+    border-left: 4px solid #696969;
+}
+.para1{
+    font-size: 30px;
+    padding-top: 60px;
+    font-weight: bold;
+    color: #696969;
+    text-shadow: 0px 0px 15px #DCDCDC;
+    transition:font-size 0.5s;
+}
+.para2{
+    font-weight: bold;
+}
+#part3{
+    height: auto;
+    text-align: center;
+    box-shadow: 4px 4px 12px #DCDCDC;
+
+
+}
+#part3 h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-style:italic;
+    font-size: 30px;
+    font-weight: bold;
+    color:#696969;
+    padding-top: 40px;
+}
+article{
+    display: inline-block;
+    width: 30%;
+    background-color: #f0f0f0;
+    text-align: center;
+    line-height: 30px;
+    border:1px solid #696969;
+    border-radius:20px 20px 0px 0px;
+    margin: 30px 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    box-shadow: 4px 4px 12px #DCDCDC;
+
+}
+figcaption, .chap{
+    font-weight: bold;
+    padding-bottom: 30px;
+
+}
+.country{
+    webkit-transition: .3s ease-in-out;
+    transition: .3s;
+    box-shadow: 4px 4px 12px #DCDCDC;
+
+
+}
+.country:hover{
+    margin-left: 10px;
+
+}
+.link1 {
+    width: 100%;
+    text-decoration: none;
+    font-weight: bold;
+    color: #696969;
+    font-size: 18px;
+    background-color: #DCDCDC;
+    padding: 5px 50px;
+}
+
+#phot2{
+    text-align: center;
+    padding-top: 50px;
+}
+section #part5{
+    font-size: 20px;
+    text-align: justify;
+    line-height: 20px;
+    font-style: italic;
+    margin-left: 80px;
+    padding-top: 50px;
+    padding-left: 80px;
+    padding-right: 80px;
+    border-left: 4px solid #696969;
+
+}
+#foot{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    color:#696969;
+    background-color: #DCDCDC;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 4px 4px 12px #DCDCDC;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
