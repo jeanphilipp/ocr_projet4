@@ -60,6 +60,7 @@ nav a:hover{
     transition: font-size 0.5s;
 }
 
+
 /* Espace personnel*/
 
 #container{
@@ -225,19 +226,21 @@ article{
 figcaption, .chap{
     font-weight: bold;
     padding-bottom: 30px;
-
 }
+
 .country{
     webkit-transition: .3s ease-in-out;
     transition: .3s;
     box-shadow: 4px 4px 12px #DCDCDC;
-
-
 }
 .country:hover{
     margin-left: 10px;
-
 }
+
+/*.test1{
+    display: none;
+}*/
+
 .link1 {
     width: 100%;
     text-decoration: none;

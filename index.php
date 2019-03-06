@@ -13,13 +13,6 @@ include_once 'models/UsersManager.php';
 
 //include_once 'views/member_view.php';
 
-/*$usersManager = new UsersManager();
-$var = $usersManager->get(1);
-
-var_dump($var);*/
-
-//var_dump($db);
-
 // Definition de la page courante
 if (isset($_GET['page']) AND !empty($_GET['page'])) {
     $page = trim(strtolower($_GET['page']));
@@ -32,7 +25,6 @@ $allPages = scandir('controllers/');
 
 // test verification tableau
 //var_dump($allPages);
-var_dump($page);
 
 if(in_array($page.'_controller.php', $allPages)){
     //inclusion de la page
@@ -43,5 +35,4 @@ if(in_array($page.'_controller.php', $allPages)){
 } else {
     // retour d'une erreur
     echo 'test Erreur 404';
-
 }

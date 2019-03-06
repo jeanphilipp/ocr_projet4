@@ -1,5 +1,4 @@
 <?php
-
 // --------------------------- //
 //       ERRORS DISPLAY        //
 // --------------------------- //
@@ -8,14 +7,12 @@
 error_reporting(E_ERROR | E_PARSE);
 ini_set('display_errors', true);
 
-
 // --------------------------- //
 //          SESSIONS           //
 // --------------------------- //
 
 ini_set('session.cookie_lifetime', false);
 session_start();
-
 
 // --------------------------- //
 //         CONSTANTS           //

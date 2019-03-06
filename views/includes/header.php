@@ -6,8 +6,7 @@
     <ul class="menu">
         <li class="menu1"><a href="home">Accueil</a></li>
         <li class="menu1"><a href="chapter">Chapitres</a></li>
-        <li class="menu1"><a href="contact">Contact</a></li>
-        <li class="menu1"><a href="member">Espace personnel</a></li>
+        <li class="menu1"><a href="user">Espace personnel</a></li>
 
     </ul>
 </nav>

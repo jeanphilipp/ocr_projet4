@@ -9,8 +9,6 @@
 <body>
 <?php include_once 'views/includes/header.php'; ?>
 
-
-
 <!-- Création du formulaire(html) -->
 <div id="container">
 <div class="login">
@@ -20,9 +18,7 @@
         <p>
             <input class="champ" type="text" name="pseudo" placeholder="Pseudo" />
         </p>
-        <p>
-            <input class="champ" type="text" name="mail" placeholder="Mail" />
-        </p>
+
         <p>
             <input class="champ" type="password" name="password" placeholder="Password" />
         </p>
@@ -34,13 +30,12 @@
                 echo '<p class="msg">'.$message.'</p>';
             }
             ?>
-            <p><a href="creer-compte.php">Créer votre compte</a></p>
+            <p><a href="">Créer votre compte</a></p>
         </div>
 
     </form>
 </div> <!-- .login -->
 </div> <!-- #container -->
-
 
 <?php include_once 'views/includes/footer.php' ?>
 </body>

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Permet de sécuriser une chaine de caractères
  * @param $string

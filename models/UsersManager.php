@@ -5,12 +5,12 @@
  * Date: 13/02/19
  * Time: 13:37
  */
-
+//? a qui me sert cette classe ?
 class UsersManager
 {
-//fonction getAll qui récupère tous les users
-
-    public function get($id_user){
+//fonction getAll qui récupère tous les users, 4fonction, isAdmin()
+//
+    public function getUser($id_user){
         global $db;
         $id_user = str_secur($id_user);
 
@@ -19,7 +19,7 @@ class UsersManager
         $data = $reqUser->fetch();
 
         $user = new Users();
-
+       // ?? set?
         $user->setIdUser($id_user);
         $user->setPseudo($data['pseudo']);
         $user->setMail($data['mail']);
@@ -32,5 +32,5 @@ class UsersManager
 }
 
 //ajouter user
-//etc getall , delete, add, update
+//etc getUser , deleteUser, addUser, updateUser
 //avec les requetes qui corresponde (base de donnees
