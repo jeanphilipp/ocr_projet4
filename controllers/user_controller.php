@@ -6,8 +6,11 @@
  * Time: 14:58
  */
 
+include_once 'views/user_view.php';
+
+
 session_start();
-//require_once('db.php');
+require_once('db.php');
 
 //faire basculer cette requete dans une fonction de userManager verif
 if(isset($_POST['login'])){

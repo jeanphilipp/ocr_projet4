@@ -1,8 +1,6 @@
+<footer class="blog-footer text-center">
 
-
-<div id="foot">
-    <span>&copy;2019 -jpgwebcreation</span>
-</div>
-
+    <span>&copy;2019 - jpgwebcreation</span>
+</footer>
 
 

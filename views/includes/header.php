@@ -1,13 +1,15 @@
-<div id="main">
-<div id="entete">
-    <h1>Blog de Jean Forteroche</h1>
-</div>
-<nav>
-    <ul class="menu">
-        <li class="menu1"><a href="home">Accueil</a></li>
-        <li class="menu1"><a href="chapter">Chapitres</a></li>
-        <li class="menu1"><a href="user">Espace personnel</a></li>
+<header>
 
-    </ul>
-</nav>
+<div class="blog-header py-3">
+
+    <h1 class="text-center">Blog de Jean Forteroche</h1>
+    <p class="text-center font-italic">Acteur et écrivain</p>
+            <nav class="nav justify-content-center text-uppercase font-weight-bold">
+                <a class="p-2 text-muted" href="index.php?page=home">Accueil</a>
+                <a class="p-2 text-muted" href="index.php?page=chapter">Chapitres</a>
+                <a class="p-2 text-muted" href="index.php?page=user">Espace personnel</a>
+            </nav>
 </div>
+</header>
+
+

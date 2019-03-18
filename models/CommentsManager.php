@@ -1,6 +1,6 @@
 <?php
 
-class Comments
+class commentsManager
 {
     public $id_comment;
     public $coms_content;

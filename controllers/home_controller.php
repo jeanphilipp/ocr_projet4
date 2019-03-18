@@ -1,4 +1,11 @@
-<?php
-include_once 'models/Chapters.php';
 
-$allChapters = Chapters::getAllChapters();
+<?php
+
+
+include_once 'views/home_view.php';
+
+?>
+
+
+
+
