@@ -6,11 +6,11 @@ include_once '_config/db.php';
 include_once 'models/Chapter.php';
 include_once 'models/ChaptersManager.php';
 
-include_once 'models/Comments.php';
+/* (vide) include_once 'models/Comments.php';
 include_once 'models/CommentsManager.php';
 
 include_once 'models/Users.php';
-include_once 'models/UsersManager.php';
+include_once 'models/UsersManager.php';  */
 
 // Definition de la page courante
 if (isset($_GET['page']) AND !empty($_GET['page'])) {

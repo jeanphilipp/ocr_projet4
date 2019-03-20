@@ -25,9 +25,9 @@ class ChaptersManager
 
             $chapters[] = $chapter;
         }
-        echo '<h1>Liste des chapitres</h1><br />';
-        var_dump($chapters);
-        die;
+       // echo '<h1>Liste des chapitres</h1><br />';
+       // var_dump($chapters);
+        return $chapters;
     }
 
     function getChapter($id_chapter)
