@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <?include_once 'views/includes/head.php'; ?>
-    <title><?= ucfirst($page) ?> - Blog de Jean Forteroche !</title>
+    <title> - Blog de Jean Forteroche !</title>
 </head>
 
 <body>

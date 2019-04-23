@@ -14,11 +14,10 @@ nav {
 }
 
 
-
 /* Espace personnel*/
 
 .container{
-    display:flex;
+   /* display:flex;  */
     justify-content: center;
     align-items: center;
     width:100%;
@@ -104,3 +103,67 @@ nav {
     text-decoration: underline;
 }
 /* Fin de l'espace personnel */
+
+
+.blog-post{
+    border:2px solid lightgrey;
+    border-radius: 20px;
+    margin: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+
+.blog-post h2{
+    font-size:1.2rem;
+
+}
+
+
+.blog-post .lead{
+    font-size:1rem;
+    font-style: italic;
+}
+.blog-post .read{
+    font-size: 1rem;
+    margin-left: 20px;
+    background-color: #c3e6cb;
+    text-decoration: none;
+}
+.blog-post .read a{
+    text-decoration: none;
+}
+
+/* Debut de #commentaire */
+
+h2.blog-post-title{
+    text-align: center;
+    font-weight: bold;
+}
+p.blog-post-meta{
+    text-align: center;
+}
+
+.blog-commentaire{
+    border:1px solid gray;
+}
+
+/*.formul{
+    display: none;
+}*/
+
+
+
+
+/*.showChapter{
+    display:none;
+}*/
+.lead{
+    display:inline;
+}
+.blog-footer{
+    background-color: #c3e6cb;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

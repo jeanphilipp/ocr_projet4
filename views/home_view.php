@@ -7,9 +7,7 @@
 
 <body>
 <?php include_once 'views/includes/header.php'; ?>
-
 <div class="container">
-
    <div class="jumbotron p-4 p-md-5 rounded">
     <div class="col text-center">
         <img class="img-responsive center-block" src="assets/images/alaska.jpg" alt="Paysage de l'Alaska">
@@ -25,13 +23,11 @@
    </div>
 </div><!-- .container -->
 
-
-
 <?include_once 'views/includes/footer.php'; ?>
-
-
 </body>
 </html>
+
+
 
 
 

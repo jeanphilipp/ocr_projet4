@@ -7,6 +7,7 @@ class Chapter
     private $chaptSentence;
     private $chaptContent;
     private $chaptDateCreated;
+    private $idUser;
 
     /**
      * @return mixed
@@ -18,12 +19,10 @@ class Chapter
 
     /**
      * @param mixed $idChapter
-     * @return Chapter
      */
     public function setIdChapter($idChapter)
     {
         $this->idChapter = $idChapter;
-        return $this;
     }
 
     /**
@@ -36,12 +35,10 @@ class Chapter
 
     /**
      * @param mixed $chaptTitle
-     * @return Chapter
      */
     public function setChaptTitle($chaptTitle)
     {
         $this->chaptTitle = $chaptTitle;
-        return $this;
     }
 
     /**
@@ -54,12 +51,10 @@ class Chapter
 
     /**
      * @param mixed $chaptSentence
-     * @return Chapter
      */
     public function setChaptSentence($chaptSentence)
     {
         $this->chaptSentence = $chaptSentence;
-        return $this;
     }
 
     /**
@@ -72,12 +67,10 @@ class Chapter
 
     /**
      * @param mixed $chaptContent
-     * @return Chapter
      */
     public function setChaptContent($chaptContent)
     {
         $this->chaptContent = $chaptContent;
-        return $this;
     }
 
     /**
@@ -90,14 +83,26 @@ class Chapter
 
     /**
      * @param mixed $chaptDateCreated
-     * @return Chapter
      */
     public function setChaptDateCreated($chaptDateCreated)
     {
         $this->chaptDateCreated = $chaptDateCreated;
-        return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getIdUser()
+    {
+        return $this->idUser;
+    }
 
+    /**
+     * @param mixed $idUser
+     */
+    public function setIdUser($idUser)
+    {
+        $this->idUser = $idUser;
+    }
 
 }

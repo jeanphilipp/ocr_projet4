@@ -6,7 +6,7 @@
     <p class="text-center font-italic">Acteur et écrivain</p>
             <nav class="nav justify-content-center text-uppercase font-weight-bold">
                 <a class="p-2 text-muted" href="index.php?page=home">Accueil</a>
-                <a class="p-2 text-muted" href="index.php?page=chapter">Chapitres</a>
+                <a class="p-2 text-muted" href="index.php?page=listChapters">Chapitres</a>
                 <a class="p-2 text-muted" href="index.php?page=user">Espace personnel</a>
             </nav>
 </div>

@@ -4,9 +4,7 @@
 <meta name="description" content="">
 <meta name="author" content="test jp">
 
-<title><?= ucfirst($page) ?>-Projet 4-Blog!</title>
-
-
+<title>-Projet 4-Blog!</title>
 
 <meta name="author" content="<?= WEBSITE_AUTHOR?>">
 <meta name="description" content="<?= WEBSITE_DESCRIPTION?>" />
