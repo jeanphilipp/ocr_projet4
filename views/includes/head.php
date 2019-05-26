@@ -14,7 +14,7 @@
 <meta name="Language" content="<?= WEBSITE_LANGUAGE?>">
 
  <!--Open Graph tags -->
- <meta property="og:type"              content="website" />
+<meta property="og:type"              content="website" />
 <meta property="og:url"               content="<?= WEBSITE_FACEBOOK_URL?>" />
 <meta property="og:title"             content="<?= WEBSITE_FACEBOOK_NAME?>" />
 <meta property="og:description"       content="<?= WEBSITE_FACEBOOK_DESCRIPTION?>" />

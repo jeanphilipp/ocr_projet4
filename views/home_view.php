@@ -13,17 +13,22 @@
         <img class="img-responsive center-block" src="assets/images/alaska.jpg" alt="Paysage de l'Alaska">
         <div class="col-md-12 px-0 text-center">
             <h1 class="display-4 font-italic">Bienvenue sur mon blog !</h1>
-            <p class="lead my-3">J'écris actuellement un nouveau roman intitulé :<em>"Billet simple pour l'Alaska"</em></p>
+            <hr>
+            <p class="lead my-3">J'écris actuellement un nouveau roman intitulé :<em>"Billet simple pour l'Alaska".</em></p>
+            <br>
             <p class="lead my-3">Je vous propose de m'accompagner dans ce voyage.</p>
+            <br>
             <p class="lead my-3">Découvrez les chapitres ... Et si vous voulez me faire part de vos commentaires, </p>
-            <p class="lead my-3">créez un compte sur l'espace personnel.</p>
+            <br>
+            <p class="lead my-3 font-weight-bold">créez votre compte sur l'espace personnel.</p>
+            <br>
             <p class="lead my-3">Partons ensemble pour cette belle aventure !</p>
         </div>
     </div>
    </div>
 </div><!-- .container -->
 
-<?include_once 'views/includes/footer.php'; ?>
+<?include_once 'views/includes/private'; ?>
 </body>
 </html>
 

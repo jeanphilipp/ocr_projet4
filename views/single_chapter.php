@@ -1,61 +1,56 @@
-<?php
-//include_once 'views/chapter_view.php';
-var_dump($chapter);die;
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <?php include_once 'views/includes/head.php'; ?>
+
+    <title>Blog de Jean Forteroche !</title>
+</head>
+<body>
+<?php include_once 'views/includes/header.php';
 ?>
+<!-- Ajout nouveau fichier -->
+<div class="showChapter">
+    <hr>
+    <p class="blog-content">
+        <?php echo $chapter->getChaptContent(); ?></p>
+   <!-- <button class="btn- btn-primary">Laissez un commentaire</button>-->
+</div>
+<hr>
 
-    <!-- Ajout nouveau fichier -->
-  <div class="showChapter">
+<div class="row">
+    <div class="col">
+        <form method="POST" action="index.php?page=addcomment" role="form">
+             <div class="form-group">
+                 <label>Pseudo :</label>
+                 <input type="text" class="form-control"  id="pseudo" name="pseudo"  placeholder="Indiquez votre pseudo"/><br>
+             </div>
+
+            <div class="form-group">
+                <textarea class="form-control" name="coms_content" id="coms_content" placeholder="Ecrivez votre commentaire ici" ></textarea><br>
+                <button type="submit" class="btn- btn-primary">Envoyer</button>
+            </div>
             <hr>
-            <p class="blog-content">
-                <?php echo $chapter->getChaptContent(); ?></p>
-            <button class="add-comment">Laissez un commentaire</></button>
-   </div>
 
-     <?php if($_POST)
-     {
-         $pseudo = $_POST['pseudo'];
-         $comment = $_POST['coms_content'];
-         if(!empty($pseudo) AND !empty($comment))
-            {
-             // $sql = ('INSERT INTO comments') VALUES("'.$pseudo.'", "'.$comment.'")or die ("Erreur");
-                echo "Votre commentaire est ajouté";
-            } else
-                {
-                 echo "Erreur, il manque un ou plusieurs champs";
-                }
-         }
-    ?>
-        <div class="formul">
-            <form method="POST" action="index.php">
-                <label>Pseudo :</label>
-                <input type="text" name="pseudo" /><br>
-                <label>Votre commentaire :</label>
-                <textarea name="commentaire"></textarea><br>
-                <input type="submit" value="Envoyer">
-            </form>
-        </div> <!-- .formul-->
+            <input type="text" name="id_chapter" id="id_chapter" value="<?php echo $chapter->getIdChapter();?>" />
+            <input type="text" name="id_user" id="id_user" value="<?php echo 0;?>" />
+        </form>
+    </div>
+</div>
 
-            <?php
-            if(array_key_exists($chapter->getIdChapter(),$arrayComments[]))
-        {  ?>
+<!-- Affichage des commentaires -->
+<?php foreach ($allComments as $comment)
+{
+    if ($comment instanceof Comment)
+    { ?>
+        <div class="row">
+            <div class="col-sm-9"><?php echo $comment->getComsContent(); ?></div>
+        </div>
+    <?php } ?>
+<?php } ?>
+
+<?php include_once 'views/includes/footer.php' ?>
+</body>
+</html>
 
 
-        <?php $content = $arrayComments[1]['getComsContent'];
-        echo $content;
-        } ?>
-       <?php
-       $comments = $arrayComments[$chapter->getIdChapter()];
-       echo '<pre>';
-            print_r($arrayComments[$chapter->getIdChapter()]);
-        echo '</pre>';
-       foreach ($comments as $comment){
-           ?>
-           <div class="blog-commentaire">
-               <p class="blog-content">
-                   <?php
-                   echo "<em>".$comment->getComsContent()."</em>"; ?></p>
-               <p class="blog-post-meta"> <?php
-                   echo date_format(date_create($comment->getComsDateCreated()), "d/m/Y"); ?></p>
-           </div><!-- .blog-commentaire -->
 
-<?php };

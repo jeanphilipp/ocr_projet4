@@ -25,7 +25,6 @@ class ChaptersManager
     static function getChapter($id_chapter)
     {
         global $db;
-        //$id_chapter = str_secur($id_chapter);
         $reqChapter = $db->prepare('SELECT * FROM chapters WHERE id_chapter = ?');
         $reqChapter->execute([$id_chapter]);
         $data = $reqChapter->fetch();
@@ -36,8 +35,6 @@ class ChaptersManager
         $chapter->setChaptSentence($data['chapt_sentence']);
         $chapter->setChaptContent($data['chapt_content']);
         $chapter->setChaptDateCreated($data['chapt_datecreated']);
-        // je n ai pas id comment dans mes chapitres $chapter->setIdComment($data['id_comment']);
         return $chapter;
     }
-
 }

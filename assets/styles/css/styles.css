@@ -13,15 +13,7 @@ nav {
     background-color:#c3e6cb;
 }
 
-
 /* Espace personnel*/
-
-.container{
-   /* display:flex;  */
-    justify-content: center;
-    align-items: center;
-    width:100%;
-}
 
 .login {
     width: 500px;
@@ -29,27 +21,26 @@ nav {
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 15px;
-    margin-top: 50px;
-    margin-bottom: 30px;
+    margin: auto;
     padding: 15px;
 
 }
 
 .login h2 {
     font-family: Verdana, Times, serif;
-    font-size: 35px;
+    font-size: 25px;
     color: #333;
     margin: 0;
     padding:0;
     text-align: center;
 }
 
-.container .acces {
+#container .acces {
     text-align: center;
     margin-bottom: 30px;
 }
 
-.container .champ {
+#container .champ {
     width: 400px;
     height: 30px;
     border: 1px solid #c3c3c3;
@@ -59,19 +50,19 @@ nav {
     background: #e4e4e4;
 }
 
-.container .champ:hover {
+#container .champ:hover {
     background: #fff;
     border: 1px solid #000;
 }
 
-.container .loginbottom {
+#container .loginbottom {
     background: #d3dfdf;
     padding-top: 35px;
     padding-bottom: 35px;
     border-radius: 5px;
 }
 
-.container .bt {
+#container .bt {
     background: #000;
     color: #fff;
     width: 150px;
@@ -136,7 +127,26 @@ nav {
 }
 
 /* Debut de #commentaire */
+form{
+    margin-left:50px;
+}
 
+
+.showChapter{
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align:justify;
+    font-style: italic;
+}
+
+.form-group{
+    margin-left: 100px;
+    margin-right: 500px;
+}
+
+.col-sm-9{
+    margin-left: 100px;
+}
 h2.blog-post-title{
     text-align: center;
     font-weight: bold;
