@@ -12,7 +12,30 @@ class Comment
     private $comsContent;
     private $comsDateCreated;
     private $idUser;
+
+    //private $user;
+
     private $idChapter;
+
+    /* Ajout */
+    private $signalement;
+
+
+    /**
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
 
     /**
      * @return mixed
@@ -93,5 +116,20 @@ class Comment
     {
         $this->idUser = $idUser;
     }
-    
+
+    /**
+     * @return mixed
+     */
+    public function getSignalement()
+    {
+        return $this->signalement;
+    }
+
+    /**
+     * @param mixed $signal
+     */
+    public function setSignalement($signalement)
+    {
+        $this->signalement = $signalement;
+    }
 }

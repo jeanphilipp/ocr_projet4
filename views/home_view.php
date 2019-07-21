@@ -1,4 +1,6 @@
+<?php session_start()?>
 <!doctype html>
+
 <html lang="fr">
 <head>
     <meta charset="utf-8">
@@ -7,12 +9,21 @@
 
 <body>
 <?php include_once 'views/includes/header.php'; ?>
+
+
 <div class="container">
+
    <div class="jumbotron p-4 p-md-5 rounded">
     <div class="col text-center">
+
+<div class="row">
+    <div class="col-12">
         <img class="img-responsive center-block" src="assets/images/alaska.jpg" alt="Paysage de l'Alaska">
+    </div>
+</div>
+        <hr>
         <div class="col-md-12 px-0 text-center">
-            <h1 class="display-4 font-italic">Bienvenue sur mon blog !</h1>
+            <h1 class="welcome">Bienvenue sur mon blog !</h1>
             <hr>
             <p class="lead my-3">J'écris actuellement un nouveau roman intitulé :<em>"Billet simple pour l'Alaska".</em></p>
             <br>
@@ -27,8 +38,7 @@
     </div>
    </div>
 </div><!-- .container -->
-
-<?include_once 'views/includes/private'; ?>
+<?include_once 'views/includes/footer.php'; ?>
 </body>
 </html>
 

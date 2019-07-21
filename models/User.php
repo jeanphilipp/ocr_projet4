@@ -11,7 +11,7 @@ class User
 private $idUser;
 private $pseudo;
 private $mail;
-private $pass;
+private $password;
 private $admin;
 
     /**
@@ -65,17 +65,17 @@ private $admin;
     /**
      * @return mixed
      */
-    public function getPass()
+    public function getPassword()
     {
-        return $this->pass;
+        return $this->password;
     }
 
     /**
      * @param mixed $pass
      */
-    public function setPass($pass)
+    public function setPassword($password)
     {
-        $this->pass = $pass;
+        $this->password = $password;
     }
 
     /**

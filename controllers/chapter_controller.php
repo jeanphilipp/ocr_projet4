@@ -2,7 +2,6 @@
 
 function listChapters()
 {
-
    $allChapters = ChaptersManager::getAllChapters();
     $allComments = CommentsManager::getAllComments();
     $arrayComments = array();
@@ -20,7 +19,6 @@ function chapter()
     include_once 'views/single_chapter.php';
 }
 
-?>
 
 
 

@@ -21,6 +21,7 @@
 <meta property="og:image"             content="<?= WEBSITE_FACEBOOK_IMAGE?>" />
 
 <!-- CSS Styles -->
+<link rel="stylesheet" href="assets/styles/css/reset.css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
 <!-- Custom styles for this template -->
 <link href="assets/styles/css/styles.css" rel="stylesheet">
