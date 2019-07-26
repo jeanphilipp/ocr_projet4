@@ -47,9 +47,6 @@ class FrontController
       if (isset($_POST['signaler']) && isset($_POST['id_comment']))
       {
            CommentsManager::signalComment((int)$_POST['id_comment']);
-
-          //echo "OK !!";
-         // die;
           header("Location: index.php?page=chapter&id=".$_POST['id_chapter']);
       }
     }
@@ -77,7 +74,6 @@ class FrontController
             if (empty($_POST['pseudo']) || empty($_POST['password'])) {
                 $message = 'Veuillez renseigner tous les champs !';
             }
-
             $user_exists = UsersManager::checkConnection();
 
          /* A EFFACER PLUS TARD !! echo '<pre>';
@@ -86,14 +82,19 @@ class FrontController
             echo '</pre>';
          */
 
-           if ($user_exists) {
-                $message = "Vous êtes connecté !";
-                header('Location: index.php');
-            } else {
+           if($user_exists && empty($_SESSION['admin']))
+           {
+               header('Location: index.php');
+           }
+
+           if($_SESSION['admin']){
+               header('Location: index.php?admin&page=users');
+           }
+
+           else {
                 $message = 'Accès refusé !';
             }
         }
-
         include_once 'views/user_view.php';
     }
 

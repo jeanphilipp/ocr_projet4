@@ -19,14 +19,13 @@ include_once 'controllers/BackController.php';
 $frontcontrol = new FrontController();
 $backcontrol = new BackController();
 
+
+/************************ ESPACE ADMINISTRATION réservé à l'admin ************************/
 /* Test si admin ou non dans URL */
 if (isset($_GET['admin'])) {
-
-    // ESPACE ADMINISTRATEUR
     if (!$backcontrol->isAdmin()) {
         header('Location: index.php?page=connection');
     }
-
     if (isset($_GET['page'])) {
         if ($_GET['page'] == 'listChapters') {
             $backcontrol->listChapters();
@@ -44,16 +43,20 @@ if (isset($_GET['admin'])) {
             $backcontrol->removeChapter();
         } elseif ($_GET['page'] == 'users') {
             $backcontrol->showUsers();
-
         } elseif ($_GET['page'] == 'delete-comment') {
             $backcontrol->removeComment();
+
+        }elseif($_GET['page'] == 'espace-perso')  {
+            $backcontrol->espacePerso();
+
         } else {
-            echo "page introuvable !";
+            echo "Erreur 404, page introuvable !";
         }
     }
+}
 
-    // ESPACE FRONTEND
-} else {
+/************************ ESPACE FRONT-END ************************/
+ else {
     if (isset($_GET['page'])) {
         if ($_GET['page'] == 'listChapters') {
             listChapters();

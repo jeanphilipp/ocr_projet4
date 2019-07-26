@@ -4,9 +4,6 @@
     <?php include_once 'views/includes/head.php'; ?>
     <title>Blog de Jean Forteroche !</title>
 
-    <!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
-     <script>tinymce.init({selector:'textarea'});</script>-->
-
 </head>
 
 <body>
@@ -17,10 +14,12 @@
         <div class="col text-center">
             <p class="lead">Membres</p>
             <table class="table">
+                <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
                     <th>Pseudo</th>
                 </tr>
+                </thead>
 
                 <?php foreach ($allUsers as $user) { ?>
                     <tr>
@@ -36,10 +35,15 @@
             <hr>
             <p class="lead">Commentaires</p>
             <table class="table">
+                <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
                     <th>Commentaire</th>
+                    <th>Nombre de signalements</th>
                 </tr>
+                </thead>
+
+
 
                 <?php foreach ($allComments as $comment) { ?>
                     <tr>
@@ -48,6 +52,10 @@
                         </td>
                         <td>
                             <?= $comment->getComsContent(); ?>
+                        </td>
+
+                        <td>
+                            <?= $comment->getSignalement(); ?>
                         </td>
 
                         <td><a href="index.php?admin&page=delete-comment&id=<?= $comment->getIdComment();?>">Supprimer</a></td>

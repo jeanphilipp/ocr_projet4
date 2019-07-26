@@ -25,7 +25,7 @@
                 }
                 ?>
                 <hr>
-                <a href="index.php?page=connection">Se connecter</a>
+               <p class="lead"><a href="index.php?page=connection">Se connecter</a></p>
             </div>
         </form>
     </div> <!-- .login -->

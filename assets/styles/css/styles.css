@@ -97,6 +97,10 @@ nav{
 
 .msg{
     color: red;
+    padding:10px;
+   /* text-align: justify;*/
+    font-size:18px;
+
 }
 
 .login a{

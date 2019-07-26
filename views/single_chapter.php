@@ -20,8 +20,8 @@ $pseudo =  $_SESSION['pseudo'];
     <div class="col-12">
         <form method="POST" action="index.php?page=addcomment" role="form">
             <div class="form-group">
-                <label>Pseudo :</label>
-                <input type="text" class="form-control" id="pseudo" name="pseudo"
+               <!-- <label>Pseudo :</label> -->
+                <input type="hidden" class="form-control" id="pseudo" name="pseudo"
                        placeholder="<?php echo $_SESSION['pseudo'];?>"/><br>
             </div>
             <div class="form-group">
@@ -31,8 +31,8 @@ $pseudo =  $_SESSION['pseudo'];
             </div>
 
             <hr>
-            <input type="text" name="id_chapter" id="id_chapter" value="<?php echo $chapter->getIdChapter(); ?>"/>
-            <input type="text" name="id_user" id="id_user" value="<?php echo $id; ?>"/>
+            <input type="hidden" name="id_chapter" id="id_chapter" value="<?php echo $chapter->getIdChapter(); ?>"/>
+            <input type="hidden" name="id_user" id="id_user" value="<?php echo $id; ?>"/>
         </form>
 
     </div>
@@ -51,13 +51,12 @@ $pseudo =  $_SESSION['pseudo'];
         <?= $comment->getComsContent(); ?><br>
         <?php $user = new User(); ?>
 
-        <p>Posté par : <b><?php echo $comment->getUser()->getPseudo();?></b> le <?= $comment->getComsDateCreated('d-m-Y');?>
+        <p>Posté par : <b><?php echo $comment->getUser()->getPseudo();?></b>, publié le <?= $comment->getComsDateCreated('d-m-Y');?>
 
         <form action="index.php?page=signalComment" method="POST">
-          <!--  <a href="index.php?page=listChapters= php /* $comment->getIdComment(); */; ?>">Signaler ce commentaire (0)</a>  -->
             <input type="hidden" name="id_comment" value="<?= $comment->getIdComment(); ?>" />
             <input type="hidden" name="id_chapter" value="<?= $chapter->getIdChapter(); ?>" />
-            <input class="bt" type="submit" name="signaler" value="Signaler ce commentaire <?= $comment->getSignalement();?>"/>
+            <input class="bt" type="submit" name="signaler" value="Signaler ce commentaire (<?= $comment->getSignalement(); ?>)"/>
         </form>
         <hr>
 

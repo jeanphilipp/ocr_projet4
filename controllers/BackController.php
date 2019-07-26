@@ -2,31 +2,36 @@
 
 class BackController
 {
+
+
+    public function espacePerso()
+    {
+
+        if(!isset($_SESSION['pseudo']))
+        {
+            header('Location: index.php?page=connection');
+        }
+        elseif(!$this->isAdmin())
+        {
+            header('Location: index.php');
+        }
+        else//Administrateur
+        {
+           // include_once 'views/createaccount.php';
+            $this->showUsers();
+        }
+
+
+    }
+
+
+
     public function showUsers()
     {
         $allUsers = UsersManager::getAllUsers();
         $allComments = CommentsManager::getAllComments();
         require 'views/back/users_view.php';
     }
-
-
-    //appeler les commentaire correspondant a la fonction
-
-    /* Ajout Jp authenfication administrateur(non validé)
-     public function run()
-     {
-         $user = new User();
-
-         if($user->authentificated())
-         {
-             require 'views/back/users_view.php';
-         }
-         else
-             {
-                 header('location:index.php?page=home');
-                 echo "Accès réservé à l'administrateur";
-             }
-     }*/
 
     /* Section ADMINISTRATEUR */
 
@@ -81,7 +86,7 @@ class BackController
         header('Location: index.php?admin&page=listChapters');
     }
 
-    /* Ajout pour valider les commentaire (JP)*/
+    /* a faire verifier : Ajout pour valider les commentaire (JP)*/
     public function validateComment()
     {
         $id = $_GET['id'];
@@ -101,7 +106,11 @@ class BackController
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
             return true;
+
         }
         return false;
     }
 }
+
+
+

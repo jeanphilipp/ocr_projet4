@@ -3,6 +3,10 @@
 <head>
     <?php include_once 'views/includes/head.php'; ?>
     <title>Blog de Jean Forteroche !</title>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
+      <script>tinymce.init({selector:'textarea'});</script>
+
+
 </head>
 
 <body>
@@ -13,6 +17,7 @@
         <div class="col text-center">
             <p class="lead">Création d'un chapitre</p>
             <hr>
+
             <form action="index.php?admin&page=create-chapter-post" method="POST">
                 <p><input class="champ" type="text" name="chapt_title" placeholder="Titre" /></p>
                 <p><input class="champ" type="text" name="chapt_sentence" placeholder="Introduction" /></p>

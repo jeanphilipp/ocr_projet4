@@ -6,7 +6,8 @@ class CommentsManager
     {
         global $db;
         //ajouter faire inner join
-        $reqComment = $db->prepare("SELECT * FROM comments WHERE `signalement` >= 2");
+        $reqComment = $db->prepare("SELECT * FROM comments 
+        AS c INNER JOIN users AS u ON u.id_user= c.id_user WHERE `signalement` >= 5 ORDER BY signalement DESC");
         $reqComment->execute([]);
         $comments = array();
         while ($donnees = $reqComment->fetch()) {
@@ -16,19 +17,20 @@ class CommentsManager
             $comment->setComsDateCreated($donnees['coms_datecreated']);
             $comment->setIdChapter($donnees['id_chapter']);
             $comment->setIdUser($donnees['id_user']);
+            //ajout JP
+            $comment->setSignalement($donnees['signalement']);
+
             $comments[] = $comment;
         }
         return $comments;
     }
 
-    //CREER function getAllCommentbySignal
-
     function getComment($id_comment)
     {
         global $db;
-        // Ajouter faire inner join
-       // Ne fonctionne PAS : $id_comment = str_secur($id_comment);
-        $reqComment = $db->prepare('SELECT * FROM comments WHERE id_comment = ?');
+        // Ajouter faire inner join (a valider)
+        $reqComment = $db->prepare('SELECT * FROM comments
+        AS c INNER JOIN users AS u ON u.id_user= c.id_user WHERE id_comment = ?');
         $reqComment->execute([$id_comment]);
         $data = $reqComment->fetch();
         $comment = new Comment();
@@ -37,6 +39,7 @@ class CommentsManager
         $comment->setComsDateCreated($data['coms_datecreated']);
         $comment->setIdChapter($data['id_chapter']);
         $comment->setIdUser($data['id_user']);
+        $comment->setSignalement($data['signalement']);
         return $comment;
     }
 
@@ -44,8 +47,8 @@ class CommentsManager
     {
         global $db;
         $reqComment = $db->prepare("SELECT *, DATE_FORMAT(coms_datecreated, '%d-%m-%Y') 
-     AS coms_datecreated FROM comments as c INNER JOIN users as u ON u.id_user= c.id_user
-     WHERE id_chapter = ? ORDER BY id_comment DESC");
+        AS coms_datecreated FROM comments AS c INNER JOIN users AS u ON u.id_user= c.id_user
+        WHERE id_chapter = ? ORDER BY id_comment DESC");
 
         $reqComment->execute([$id_chapter]);
         $comments = array();
@@ -57,15 +60,12 @@ class CommentsManager
             //setter toutes donnees de l utilisateur
 
             $comment = new Comment();
-
             $comment->setIdComment($donnees['id_comment']);
             $comment->setComsContent($donnees['coms_content']);
             $comment->setComsDateCreated($donnees['coms_datecreated']);
             $comment->setIdChapter($donnees['id_chapter']);
             $comment->setIdUser($donnees['id_user']);
-
             $comment->setSignalement($donnees['signalement']);
-
             $comment->setUser($user);
             $comments[] = $comment;
             //var_dump($donnees);
@@ -83,19 +83,13 @@ class CommentsManager
         $req->execute(array($_POST['coms_content'],$_POST['id_chapter'],$_POST['id_user']));
 
     }
-/* Methode pour ajouter un signalement dans la BDD, maximum 5  JP */
+/* Ajout signalement dans la BDD*/
    public static function signalComment(int $id_comment)
     {
         global $db;
-
-            $req = $db->prepare("UPDATE `comments` SET `signalement`= signalement + 1 WHERE id_comment=:id_comment");
-
-        //$req->bindValue(':signalement', $comment->getSignalement(),PDO::PARAM_INT);
+        $req = $db->prepare("UPDATE `comments` SET `signalement`= signalement + 1 WHERE id_comment=:id_comment");
         $req->bindValue(':id_comment', $id_comment,PDO::PARAM_INT);
-
         $req->execute();
-
-
     }
 
     public function deleteComment($id)

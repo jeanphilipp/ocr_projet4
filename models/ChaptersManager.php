@@ -43,7 +43,8 @@ class ChaptersManager
         $chapt_sentence = $_POST['chapt_sentence'];
         $chapt_content = $_POST['chapt_content'];
         $chapt_datecreated = $_POST['chapt_datecreated'];
-        $id_user = $_POST['id_user'];
+
+        $id_user = $_SESSION['id'];
 
         if (isset($_POST['add_chapter'])) {
             $sql = "INSERT INTO `chapters` (chapt_title, chapt_sentence, chapt_content, chapt_datecreated, id_user)

@@ -41,6 +41,8 @@
                     </tr>
                 <?php } ?>
             </table>
+            <a href="index.php?admin&page=users" class="btn btn-info">Retour à la page d'administration</a>
+
         </div>
     </div>
 </div>

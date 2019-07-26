@@ -4,6 +4,9 @@
 <head>
     <?php include_once 'views/includes/head.php'; ?>
     <title>Blog de Jean Forteroche !</title>
+
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
+    <script>tinymce.init({selector:'textarea'});</script>
 </head>
 
 <body>
@@ -14,6 +17,7 @@
         <div class="col text-center">
             <p class="lead">Modification d'un chapitre</p>
             <?php
+
                     /**
                      * @var Chapter $chapter
                      */
@@ -24,7 +28,11 @@
                 <p><input class="champ" type="text" name="chapt_title" value="<?= $chapter->getChaptTitle();?>"/></p>
                 <p><input class="champ" type="text" name="chapt_sentence" value="<?= $chapter->getChaptSentence();?>" /></p>
                 <textarea class="champ" type="text" rows="10" cols="40" name="chapt_content"><?= $chapter->getChaptContent();?></textarea>
+
                 <p><input class="champ" type="date" name="chapt_datecreated" value="<?= $chapter->getChaptDateCreated();?>" /></p>
+
+
+
                 <p><input class="bt" type="submit" name="modification" value="Modifier"/></p>
                 <p><a href="index.php?admin&page=listChapters" class="btn btn-info">Retour aux chapitres</a></p>
             </form>

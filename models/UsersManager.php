@@ -81,24 +81,20 @@ class UsersManager
         $req->execute(
             array(
                 'pseudo'   => $_POST['pseudo'],
-               // 'password' => password_hash($_POST['password'], PASSWORD_DEFAULT)
             )
         );
         //var_dump(password_hash($_POST['password'],PASSWORD_DEFAULT));die;
-
         $count = $req->rowcount();
-
         //Si le couple pseudo/password est trouvé
         if ($count > 0) {
             $donnee = $req->fetch(PDO::FETCH_ASSOC);
            $result_password  = password_verify($_POST['password'], $donnee['password']);
           // var_dump($result_password);
-           if($result_password)
+           if($result_password )
            {
-               $_SESSION['pseudo'] = $_POST['pseudo'];
-             //  $_SESSION['password'] = $_POST['password'];
+               $_SESSION['pseudo']   = $_POST['pseudo'];
                $_SESSION['id']       = $donnee['id_user'];
-               $_SESSION['admin'] = $donnee['admin'];
+               $_SESSION['admin']     = $donnee['admin'];
            }
 
           //  var_dump($_POST['password'], $donnee['password']);die;
@@ -109,8 +105,3 @@ class UsersManager
     }
 }
 
-// NOMBRE DE SIGNALEMENTS EN BDD
-//AJOUTER BOUTON POUR LES COMMENTAIRE
-/* sur feuille blanche dessiner, quelle route, quelle fonction du manager
-avec un petit coquis
-interface, bouton ? etc, prevoir interface pour ajoiu de btn */
