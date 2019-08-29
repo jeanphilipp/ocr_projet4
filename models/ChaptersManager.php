@@ -43,7 +43,6 @@ class ChaptersManager
         $chapt_sentence = $_POST['chapt_sentence'];
         $chapt_content = $_POST['chapt_content'];
         $chapt_datecreated = $_POST['chapt_datecreated'];
-
         $id_user = $_SESSION['id'];
 
         if (isset($_POST['add_chapter'])) {
@@ -56,10 +55,7 @@ VALUES (?,?,?,?,?)";
             $rs_insert->bindValue(4, $chapt_datecreated, PDO::PARAM_STR);
             $rs_insert->bindValue(5, $id_user, PDO::PARAM_INT);
             $rs_insert->execute();
-
             include_once 'views/back/users_view.php';
-        } else {
-            echo "Une erreur est survenue !";
         }
     }
 
@@ -69,23 +65,21 @@ VALUES (?,?,?,?,?)";
         $reqChapter = $db->prepare("UPDATE `chapters` SET `chapt_title` =:chapt_title,`chapt_sentence` =:chapt_sentence, 
         `chapt_content` =:chapt_content, `chapt_datecreated` = :chapt_datecreated WHERE `id_chapter` =:chapt_id");
 
-            $reqChapter->bindValue(':chapt_id',$chapter->getIdChapter(),PDO::PARAM_INT);
-            $reqChapter->bindValue(':chapt_title',     $chapter->getChaptTitle(), PDO::PARAM_STR);
-            $reqChapter->bindValue(':chapt_sentence',  $chapter->getChaptSentence(), PDO::PARAM_STR);
-            $reqChapter->bindValue(':chapt_content',   $chapter->getChaptContent(), PDO::PARAM_STR);
-            $reqChapter->bindValue(':chapt_datecreated',$chapter->getChaptDateCreated(), PDO::PARAM_STR);
-            $reqChapter->execute();
+        $reqChapter->bindValue(':chapt_id', $chapter->getIdChapter(), PDO::PARAM_INT);
+        $reqChapter->bindValue(':chapt_title', $chapter->getChaptTitle(), PDO::PARAM_STR);
+        $reqChapter->bindValue(':chapt_sentence', $chapter->getChaptSentence(), PDO::PARAM_STR);
+        $reqChapter->bindValue(':chapt_content', $chapter->getChaptContent(), PDO::PARAM_STR);
+        $reqChapter->bindValue(':chapt_datecreated', $chapter->getChaptDateCreated(), PDO::PARAM_STR);
+        $reqChapter->execute();
     }
 
+    /* Fonction de l'admin qui supprime un chapitre */
     public function deleteChapter($id)
     {
         global $db;
         if (isset($_GET['id'])) {
             $reqChapter = $db->prepare('DELETE FROM chapters WHERE id_chapter = ?');
             $reqChapter->execute([$id]);
-        } else {
-            $message = "Une erreur est survenue !";
-            echo $message;
         }
     }
 }

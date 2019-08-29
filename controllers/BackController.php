@@ -2,29 +2,21 @@
 
 class BackController
 {
-
-
+    /*
+    * 3 CAS de figure => 1) user non connecté, 2) user connecté et non admin, 3) l'user est l'admin
+    */
     public function espacePerso()
     {
 
-        if(!isset($_SESSION['pseudo']))
-        {
+        if (!isset($_SESSION['pseudo'])) {
             header('Location: index.php?page=connection');
-        }
-        elseif(!$this->isAdmin())
-        {
+        } elseif (!$this->isAdmin()) {
             header('Location: index.php');
-        }
-        else//Administrateur
+        } else//Admin
         {
-           // include_once 'views/createaccount.php';
             $this->showUsers();
         }
-
-
     }
-
-
 
     public function showUsers()
     {
@@ -33,23 +25,39 @@ class BackController
         require 'views/back/users_view.php';
     }
 
-    /* Section ADMINISTRATEUR */
-
     public function listChapters()
     {
         $chapters = ChaptersManager::getAllChapters();
         require 'views/back/chapters_view.php';
     }
 
-    /* CRUD  */
+    /* CRUD
+    Rédaction d'un chapitre par l'administrateur Jean Forteroche
+     */
     public function createChapter()
     {
-        if (!empty($_POST['chapt_title']) && !empty($_POST['chapt_sentence']) && !empty($_POST['chapt_sentence'])
-            && !empty($_POST['chapt_datecreated']) && !empty($_POST['id_user'])) {
-            $chapter = ChaptersManager::addChapter();
-            //REDIRECTION sur la route index ...
-            header('Location: index.php?admin&page=listChapters');
+        $errors =[];
+
+        if(empty($_POST['chapt_title']))
+        {
+            $errors[] = "Titre vide";
         }
+        if(empty($_POST['chapt_sentence']))
+        {
+            $errors[] = "Phrase vide";
+        }
+        if(empty($_POST['chapt_datecreated']))
+        {
+            $errors[] = "Date vide";
+        }
+
+        if(count($errors) === 0 )
+      {
+          //On a une erreur et on les affiche avec le formulaire
+          $chapter = ChaptersManager::addChapter();
+          header('Location: index.php?admin&page=listChapters');
+      }
+      include 'views/back/chapter_create_view.php';
     }
 
     public function displayCreateChapter()
@@ -59,9 +67,7 @@ class BackController
 
     public function updateChapter()
     {
-        //1) récupère les données du formulaire
-        //2) modifie les données en bdd
-        //3) redirige sur la route de listChapters
+        /*  1) récupère les données du formulaire, 2) modifie les données en bdd, 3) redirige sur la route de listChapters */
         $chapter = new Chapter();
         $chapter->setIdChapter($_POST['id_chapter']);
         $chapter->setChaptTitle($_POST['chapt_title']);
@@ -86,14 +92,6 @@ class BackController
         header('Location: index.php?admin&page=listChapters');
     }
 
-    /* a faire verifier : Ajout pour valider les commentaire (JP)*/
-    public function validateComment()
-    {
-        $id = $_GET['id'];
-        CommentsManager::valideComment();
-        header('Location: index.php?page=chapter&id=');
-    }
-
     public function removeComment()
     {
         $id = $_GET['id'];
@@ -101,12 +99,10 @@ class BackController
         header('Location: index.php?admin&page=users');
     }
 
-    /* Admin*/
     public function isAdmin()
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
             return true;
-
         }
         return false;
     }

@@ -1,11 +1,14 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php include_once 'views/includes/head.php'; ?>
-    <title>Blog de Jean Forteroche !</title>
+    php include_once 'views/includes/head.php'; ?>
+
 </head>
 
-<body>
+<body> -->
+
+<?php include_once __DIR__.'/../top.php'; ?>
+
 <?php include_once 'views/includes/header.php'; ?>
 
 <div class="container">

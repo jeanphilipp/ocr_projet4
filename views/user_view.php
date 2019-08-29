@@ -1,12 +1,14 @@
-<?php session_start();?>
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php include_once 'views/includes/head.php';?>
+    php include_once 'views/includes/head.php';?>
     <title>Login</title>
 </head>
 
-<body>
+<body>  -->
+
+<?php $title ="se connecter"; ?>
+<?php include_once 'top.php';?>
 <?php include_once 'views/includes/header.php'; ?>
 <div id="container">
     <div class="login">

@@ -2,8 +2,6 @@
 <html lang="fr" xmlns="http://www.w3.org/1999/html">
 <head>
     <?php include_once 'views/includes/head.php'; ?>
-    <title>Blog de Jean Forteroche !</title>
-
 </head>
 
 <body>
@@ -14,12 +12,10 @@
         <div class="col text-center">
             <p class="lead">Membres</p>
             <table class="table">
-                <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
                     <th>Pseudo</th>
                 </tr>
-                </thead>
 
                 <?php foreach ($allUsers as $user) { ?>
                     <tr>
@@ -35,15 +31,11 @@
             <hr>
             <p class="lead">Commentaires</p>
             <table class="table">
-                <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
                     <th>Commentaire</th>
                     <th>Nombre de signalements</th>
                 </tr>
-                </thead>
-
-
 
                 <?php foreach ($allComments as $comment) { ?>
                     <tr>

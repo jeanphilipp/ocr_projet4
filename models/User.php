@@ -8,11 +8,11 @@
 
 class User
 {
-private $idUser;
-private $pseudo;
-private $mail;
-private $password;
-private $admin;
+    private $idUser;
+    private $pseudo;
+    private $mail;
+    private $password;
+    private $admin;
 
     /**
      * @return mixed

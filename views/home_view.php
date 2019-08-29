@@ -1,13 +1,17 @@
-<?php session_start()?>
-<!doctype html>
+<!--<!doctype html>
 
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <?include_once 'views/includes/head.php'; ?>
+
+    php $title ="Accueil"; ?>
+    include_once 'views/includes/head.php'; ?>
 </head>
 
-<body>
+<body>  -->
+
+
+<?php $title ="Accueil"; ?>
+<?include_once 'top.php'; ?>
 <?php include_once 'views/includes/header.php'; ?>
 
 

@@ -1,10 +1,17 @@
 <?php
-session_start();
+// a supprimer session start
+//session_start();
 
 class FrontController
 {
+    function home()
+    {
+        include_once 'views/home_view.php';
+    }
+
     function listChapters()
     {
+        $title = "Les chapitres";
         $allChapters = ChaptersManager::getAllChapters();
         $allComments = CommentsManager::getAllComments();
         $arrayComments = array();
@@ -21,34 +28,36 @@ class FrontController
         include_once 'views/single_chapter.php';
     }
 
-    public function listComments()
-    {
-        $allComments = CommentsManager::getAllComments();
-    }
-
     public function createComment()
     {
-          if (!empty($_SESSION['pseudo'])) {
-                $comment_created = CommentsManager::addComment();
-                  $host = $_SERVER['HTTP_HOST'];
-                  $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-                  $extra = "index.php?page=chapter&id=" . $_POST['id_chapter'];
-                  header("Location: http://$host$uri/$extra");
-                  exit;
+        if (!empty($_SESSION['pseudo'])) {
+            CommentsManager::addComment();
+            $host = $_SERVER['HTTP_HOST'];
+            $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+            $extra = "index.php?page=chapter&id=" . $_POST['id_chapter'];
+            header("Location: http://$host$uri/$extra");
+            exit;
         } else {
-            $message = "Vous devez créer un compte et/ou vous connecter pour laisser un commentaire!";
+            // creer variable title ici
+            $message = "Vous devez créer un compte et/ou vous connecter pour laisser ou signaler un commentaire !";
             include_once 'views/createaccount.php';
         }
-
     }
 
-  public function signalComment()
-  {
-      if (isset($_POST['signaler']) && isset($_POST['id_comment']))
-      {
-           CommentsManager::signalComment((int)$_POST['id_comment']);
-          header("Location: index.php?page=chapter&id=".$_POST['id_chapter']);
-      }
+    /*
+    Fonction permettant de signaler un commentaire par un utilisateur possédant un compte
+    */
+    public function signalComment()
+    {
+        if (isset($_POST['signaler']) && isset($_POST['id_comment']) && !empty($_SESSION['pseudo'])) {
+            CommentsManager::signalComment((int)$_POST['id_comment']);
+            header("Location: index.php?page=chapter&id=" . $_POST['id_chapter']);
+        } else {
+
+            $message = "Vous devez créer un compte et/ou vous connecter pour signaler un commentaire !";
+            // include_once 'views/createaccount.php';
+            header("Location: index.php?page=connection");
+        }
     }
 
     public function createUser()
@@ -66,32 +75,22 @@ class FrontController
         include_once 'views/createaccount.php';
     }
 
-    /* REVOIR CETTE PARTIE, HASH PASSWORD*/
     public function displayConnection()
     {
-        if (isset($_POST['login'])){
+        if (isset($_POST['login'])) {
             //Formulaire soumis
             if (empty($_POST['pseudo']) || empty($_POST['password'])) {
                 $message = 'Veuillez renseigner tous les champs !';
             }
             $user_exists = UsersManager::checkConnection();
 
-         /* A EFFACER PLUS TARD !! echo '<pre>';
-            var_dump($user_exists);
-            var_dump($_POST);
-            echo '</pre>';
-         */
+            if ($user_exists && empty($_SESSION['admin'])) {
+                header('Location: index.php');
+            }
 
-           if($user_exists && empty($_SESSION['admin']))
-           {
-               header('Location: index.php');
-           }
-
-           if($_SESSION['admin']){
-               header('Location: index.php?admin&page=users');
-           }
-
-           else {
+            if ($_SESSION['admin']) {
+                header('Location: index.php?admin&page=users');
+            } else {
                 $message = 'Accès refusé !';
             }
         }
@@ -100,8 +99,7 @@ class FrontController
 
     public function logout()
     {
-        if(isset($_SESSION['pseudo']))
-        {
+        if (isset($_SESSION['pseudo'])) {
             session_start();
             session_destroy();
             header("Location: index.php?page=connection");

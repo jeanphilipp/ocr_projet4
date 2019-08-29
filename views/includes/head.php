@@ -4,10 +4,9 @@
 <meta name="description" content="">
 <meta name="author" content="test jp">
 
-<title>-Projet 4-Blog!</title>
+<title><?= $title . WEBSITE_TITLE; ?></title>
 
 <meta name="author" content="<?= WEBSITE_AUTHOR?>">
-<meta name="description" content="<?= WEBSITE_DESCRIPTION?>" />
 <meta name=”keywords” content="<?= WEBSITE_KEYWORDS?>"/>
 <meta name="Reply-to" content="<?= WEBSITE_AUTHOR_MAIL?>">
 <meta name="Copyright" content="<?= WEBSITE_AUTHOR?>">
@@ -23,13 +22,11 @@
 <!-- CSS Styles -->
 <link rel="stylesheet" href="assets/styles/css/reset.css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
-<!-- Custom styles for this template -->
-<link href="assets/styles/css/styles.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles/css/styles.css"/>
 
 <!-- JS Files -->
 <script src="bootstrap/js/jquery-3.3.1.min.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
-<!--script src="/assets/js/app.js"></script-->
 
 
 

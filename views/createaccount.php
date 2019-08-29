@@ -1,13 +1,16 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <?php include_once 'views/includes/head.php'; ?>
-    <title>Créez votre compte</title>
-    <title>Blog de Jean Forteroche !</title>
+
+    include_once 'views/includes/head.php'; ?>
+
 </head>
 
-<body>
+<body>  -->
+
+<?php $title ="Créer votre compte"; ?>
+<?php include_once 'top.php'; ?>
 <?php include_once 'views/includes/header.php'; ?>
 
 <div id="container">

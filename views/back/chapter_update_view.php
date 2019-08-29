@@ -1,10 +1,7 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <?php include_once 'views/includes/head.php'; ?>
-    <title>Blog de Jean Forteroche !</title>
-
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
     <script>tinymce.init({selector:'textarea'});</script>
 </head>
@@ -41,6 +38,6 @@
 </div>
 <?php include_once 'views/includes/footer.php' ?>
 
-<script src="assets/js/test1.js"></script>
+<script src="assets/js/deleteID.js"></script>
 </body>
 </html>

@@ -4,15 +4,15 @@
 // --------------------------- //
 
 //!\\ A enlever lors du déploiement
-error_reporting(E_ERROR | E_PARSE);
+//error_reporting(E_ERROR | E_PARSE);
+error_reporting(E_ALL);
 ini_set('display_errors', true);
 
 // --------------------------- //
 //          SESSIONS           //
 // --------------------------- //
 
-ini_set('session.cookie_lifetime', false);
-session_start();
+// ini_set('session.cookie_lifetime', false);
 
 // --------------------------- //
 //         CONSTANTS           //
@@ -23,7 +23,7 @@ define("PATH_REQUIRE", substr($_SERVER['SCRIPT_FILENAME'], 0, -9)); // Pour fonc
 define("PATH", substr($_SERVER['PHP_SELF'], 0, -9)); // Pour images, fichiers etc (html)
 
 // Website informations
-define("WEBSITE_TITLE", " - Blog de Jean Forteroche !");
+define("WEBSITE_TITLE", " - Blog de J-Forteroche !");
 define("WEBSITE_NAME", "Projet 4");
 define("WEBSITE_URL", "http://localhost/projet4");
 define("WEBSITE_DESCRIPTION", "");
@@ -37,7 +37,6 @@ define("WEBSITE_FACEBOOK_NAME", "");
 define("WEBSITE_FACEBOOK_DESCRIPTION", "");
 define("WEBSITE_FACEBOOK_URL", "");
 define("WEBSITE_FACEBOOK_IMAGE", "");
-
 // DataBase informations
 define("DATABASE_HOST", "localhost");
 define("DATABASE_NAME", "projet4");
